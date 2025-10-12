@@ -20,10 +20,15 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: PlatinumFactoryMethod
     path: Bank.Domain/PlatinumFactoryMethod.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Implementación concreta del Factory Method para crear tarjetas Platinum Plus.
+
+    Especializa el proceso de creación para productos Platinum de alta gama.
+  example: []
   syntax:
     content: 'public class PlatinumFactoryMethod : CreditCardFactoryMethod'
     content.vb: Public Class PlatinumFactoryMethod Inherits CreditCardFactoryMethod
@@ -57,15 +62,17 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: MakeProduct
     path: Bank.Domain/PlatinumFactoryMethod.cs
-    startLine: 4
+    startLine: 12
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: Implementa el Factory Method para crear instancias de tarjetas Platinum Plus.
   example: []
   syntax:
     content: protected override ICreditCard MakeProduct()
     return:
       type: Bank.Domain.ICreditCard
+      description: Una nueva instancia de Platinum.
     content.vb: Protected Overrides Function MakeProduct() As ICreditCard
   overridden: Bank.Domain.CreditCardFactoryMethod.MakeProduct
   overload: Bank.Domain.PlatinumFactoryMethod.MakeProduct*

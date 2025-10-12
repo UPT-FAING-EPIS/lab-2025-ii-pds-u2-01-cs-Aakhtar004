@@ -23,6 +23,8 @@
   "Bank.Domain.PlatinumFactoryMethod.MakeProduct": "Bank.Domain.PlatinumFactoryMethod.yml",
   "Bank.Domain.Tests": "Bank.Domain.Tests.yml",
   "Bank.Domain.Tests.CreditCardTests": "Bank.Domain.Tests.CreditCardTests.yml",
+  "Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards": "Bank.Domain.Tests.CreditCardTests.yml",
+  "Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard": "Bank.Domain.Tests.CreditCardTests.yml",
   "Bank.Domain.Tests.CreditCardTests.GivenCreditTypePlatinumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard": "Bank.Domain.Tests.CreditCardTests.yml",
   "Bank.Domain.Tests.CreditCardTests.GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard": "Bank.Domain.Tests.CreditCardTests.yml",
   "Bank.Domain.Tests.CreditCardTests.GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard": "Bank.Domain.Tests.CreditCardTests.yml",

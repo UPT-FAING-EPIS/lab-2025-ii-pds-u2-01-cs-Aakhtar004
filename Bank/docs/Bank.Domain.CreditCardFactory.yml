@@ -20,10 +20,15 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: CreditCardFactory
     path: Bank.Domain/CreditCarFactory.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Implementación del patrón Factory para la creación centralizada de tarjetas de crédito.
+
+    Esta clase encapsula la lógica de instanciación de productos concretos basándose en el tipo solicitado.
+  example: []
   syntax:
     content: public class CreditCardFactory
     content.vb: Public Class CreditCardFactory
@@ -55,17 +60,25 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GetCreditCard
     path: Bank.Domain/CreditCarFactory.cs
-    startLine: 4
+    startLine: 19
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Método estático que crea instancias de tarjetas de crédito basado en el tipo especificado.
+
+    Implementa el patrón Factory proporcionando una interfaz común para la creación de objetos.
+  example:
+  - <pre><code class="lang-csharp">ICreditCard card = CreditCardFactory.GetCreditCard("MoneyBack");</code></pre>
   syntax:
     content: public static ICreditCard GetCreditCard(string cardType)
     parameters:
     - id: cardType
       type: System.String
+      description: 'El tipo de tarjeta de crédito a crear. Valores válidos: "MoneyBack", "Titanium", "Platinum".'
     return:
       type: Bank.Domain.ICreditCard
+      description: Una instancia de ICreditCard del tipo especificado, o null si el tipo no es reconocido.
     content.vb: Public Shared Function GetCreditCard(cardType As String) As ICreditCard
   overload: Bank.Domain.CreditCardFactory.GetCreditCard*
   nameWithType.vb: CreditCardFactory.GetCreditCard(String)

@@ -22,10 +22,15 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: Titanium
     path: Bank.Domain/Titanium.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Implementación concreta de tarjeta de crédito tipo Titanium Edge.
+
+    Representa un producto de gama media-alta en el patrón Factory, ofreciendo características avanzadas y durabilidad.
+  example: []
   syntax:
     content: 'public class Titanium : ICreditCard'
     content.vb: Public Class Titanium Implements ICreditCard
@@ -59,15 +64,17 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GetCardType
     path: Bank.Domain/Titanium.cs
-    startLine: 4
+    startLine: 12
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: Obtiene el tipo de tarjeta Titanium Edge.
   example: []
   syntax:
     content: public string GetCardType()
     return:
       type: System.String
+      description: El string "Titanium Edge" identificando este tipo de tarjeta de alta gama.
     content.vb: Public Function GetCardType() As String
   overload: Bank.Domain.Titanium.GetCardType*
   implements:
@@ -90,15 +97,17 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GetCreditLimit
     path: Bank.Domain/Titanium.cs
-    startLine: 8
+    startLine: 21
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: Obtiene el límite de crédito para tarjetas Titanium Edge.
   example: []
   syntax:
     content: public int GetCreditLimit()
     return:
       type: System.Int32
+      description: Límite de crédito de $25,000.
     content.vb: Public Function GetCreditLimit() As Integer
   overload: Bank.Domain.Titanium.GetCreditLimit*
   implements:
@@ -121,15 +130,17 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GetAnnualCharge
     path: Bank.Domain/Titanium.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: Obtiene el cargo anual para tarjetas Titanium Edge.
   example: []
   syntax:
     content: public int GetAnnualCharge()
     return:
       type: System.Int32
+      description: Cargo anual de $1,500.
     content.vb: Public Function GetAnnualCharge() As Integer
   overload: Bank.Domain.Titanium.GetAnnualCharge*
   implements:

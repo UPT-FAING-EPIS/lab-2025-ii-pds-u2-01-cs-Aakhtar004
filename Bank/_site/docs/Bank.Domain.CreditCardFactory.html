@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CreditCardFactory | Bank App ">
       
-      
+      <meta name="description" content="Implementaci&#243;n del patr&#243;n Factory para la creaci&#243;n centralizada de tarjetas de cr&#233;dito. Esta clase encapsula la l&#243;gica de instanciaci&#243;n de productos concretos bas&#225;ndose en el tipo solicitado.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Bank_Domain_CreditCardFactory" data-uid="Bank.Domain.CreditCardFactory" class="text-break">
-Class CreditCardFactory  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCarFactory.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Class CreditCardFactory  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCarFactory.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class CreditCardFactory  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>Bank.Domain.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Implementación del patrón Factory para la creación centralizada de tarjetas de crédito.
+Esta clase encapsula la lógica de instanciación de productos concretos basándose en el tipo solicitado.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +158,12 @@ Class CreditCardFactory  <a class="header-action link-secondary" title="View sou
 
   <h3 id="Bank_Domain_CreditCardFactory_GetCreditCard_System_String_" data-uid="Bank.Domain.CreditCardFactory.GetCreditCard(System.String)">
   GetCreditCard(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCarFactory.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCarFactory.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Método estático que crea instancias de tarjetas de crédito basado en el tipo especificado.
+Implementa el patrón Factory proporcionando una interfaz común para la creación de objetos.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,19 +173,24 @@ Class CreditCardFactory  <a class="header-action link-secondary" title="View sou
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cardType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>El tipo de tarjeta de crédito a crear. Valores válidos: &quot;MoneyBack&quot;, &quot;Titanium&quot;, &quot;Platinum&quot;.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="Bank.Domain.ICreditCard.html">ICreditCard</a></dt>
-    <dd></dd>
+    <dd><p>Una instancia de ICreditCard del tipo especificado, o null si el tipo no es reconocido.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="Bank_Domain_CreditCardFactory_GetCreditCard_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">ICreditCard card = CreditCardFactory.GetCreditCard("MoneyBack");</code></pre>
 
 
 
@@ -192,7 +201,7 @@ Class CreditCardFactory  <a class="header-action link-secondary" title="View sou
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCarFactory.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCarFactory.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

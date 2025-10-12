@@ -21,10 +21,15 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: CreditCardFactoryMethod
     path: Bank.Domain/CreditCardAbstractMethod.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Clase abstracta que implementa el patrón Factory Method para la creación de tarjetas de crédito.
+
+    Define la estructura del algoritmo de creación, delegando la instanciación específica a las subclases.
+  example: []
   syntax:
     content: public abstract class CreditCardFactoryMethod
     content.vb: Public MustInherit Class CreditCardFactoryMethod
@@ -60,14 +65,20 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: MakeProduct
     path: Bank.Domain/CreditCardAbstractMethod.cs
-    startLine: 4
+    startLine: 13
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Método abstracto que debe ser implementado por las clases derivadas para crear productos específicos.
+
+    Este es el "Factory Method" que cada subclase debe personalizar según el tipo de tarjeta.
+  example: []
   syntax:
     content: protected abstract ICreditCard MakeProduct()
     return:
       type: Bank.Domain.ICreditCard
+      description: Una instancia concreta de ICreditCard.
     content.vb: Protected MustOverride Function MakeProduct() As ICreditCard
   overload: Bank.Domain.CreditCardFactoryMethod.MakeProduct*
 - uid: Bank.Domain.CreditCardFactoryMethod.CreateProduct
@@ -88,14 +99,26 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: CreateProduct
     path: Bank.Domain/CreditCardAbstractMethod.cs
-    startLine: 7
+    startLine: 27
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Método público que utiliza el Factory Method para crear y retornar productos.
+
+    La responsabilidad principal del Creator no es crear productos, sino contener lógica de negocio central
+
+    que depende de los objetos Product retornados por el factory method.
+  example:
+  - >-
+    <pre><code class="lang-csharp">CreditCardFactoryMethod factory = new MoneyBackFactoryMethod();
+
+    ICreditCard card = factory.CreateProduct();</code></pre>
   syntax:
     content: public ICreditCard CreateProduct()
     return:
       type: Bank.Domain.ICreditCard
+      description: Una instancia de ICreditCard creada por el método factory específico de la subclase.
     content.vb: Public Function CreateProduct() As ICreditCard
   overload: Bank.Domain.CreditCardFactoryMethod.CreateProduct*
 references:

@@ -5,6 +5,8 @@ items:
   id: CreditCardTests
   parent: Bank.Domain.Tests
   children:
+  - Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  - Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
   - Bank.Domain.Tests.CreditCardTests.GivenCreditTypePlatinumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
   - Bank.Domain.Tests.CreditCardTests.GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard
   - Bank.Domain.Tests.CreditCardTests.GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
@@ -22,10 +24,15 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: CreditCardTests
     path: Bank.Domain.Tests/CreditCardTests.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - Bank.Domain.Tests
   namespace: Bank.Domain.Tests
+  summary: >-
+    Clase de pruebas para validar la funcionalidad de los patrones Factory y Factory Method
+
+    en la creación de tarjetas de crédito.
+  example: []
   syntax:
     content: public class CreditCardTests
     content.vb: Public Class CreditCardTests
@@ -57,10 +64,12 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard
     path: Bank.Domain.Tests/CreditCardTests.cs
-    startLine: 7
+    startLine: 14
   assemblies:
   - Bank.Domain.Tests
   namespace: Bank.Domain.Tests
+  summary: Prueba que valida la creación de tarjeta MoneyBack usando el patrón Factory.
+  example: []
   syntax:
     content: >-
       [Test]
@@ -71,6 +80,44 @@ items:
 
       Public Sub GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard()
   overload: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  commentId: M:Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  id: GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  parent: Bank.Domain.Tests.CreditCardTests
+  langs:
+  - csharp
+  - vb
+  name: GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard()
+  nameWithType: CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard()
+  fullName: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard()
+  type: Method
+  source:
+    remote:
+      path: Bank/Bank.Domain.Tests/CreditCardTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
+    id: GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+    path: Bank.Domain.Tests/CreditCardTests.cs
+    startLine: 33
+  assemblies:
+  - Bank.Domain.Tests
+  namespace: Bank.Domain.Tests
+  summary: Prueba que valida la creación de tarjeta MoneyBack usando el patrón Factory Method.
+  example: []
+  syntax:
+    content: >-
+      [Test]
+
+      public void GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard()
+    content.vb: >-
+      <Test>
+
+      Public Sub GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard()
+  overload: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard*
   attributes:
   - type: NUnit.Framework.TestAttribute
     ctor: NUnit.Framework.TestAttribute.#ctor
@@ -93,10 +140,12 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GivenCreditTypePlatinumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
     path: Bank.Domain.Tests/CreditCardTests.cs
-    startLine: 18
+    startLine: 50
   assemblies:
   - Bank.Domain.Tests
   namespace: Bank.Domain.Tests
+  summary: Prueba que valida la creación de tarjeta Platinum usando el patrón Factory Method.
+  example: []
   syntax:
     content: >-
       [Test]
@@ -129,10 +178,12 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
     path: Bank.Domain.Tests/CreditCardTests.cs
-    startLine: 28
+    startLine: 67
   assemblies:
   - Bank.Domain.Tests
   namespace: Bank.Domain.Tests
+  summary: Prueba que valida la creación de tarjeta Titanium usando el patrón Factory Method.
+  example: []
   syntax:
     content: >-
       [Test]
@@ -143,6 +194,44 @@ items:
 
       Public Sub GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard()
   overload: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  commentId: M:Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  id: GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  parent: Bank.Domain.Tests.CreditCardTests
+  langs:
+  - csharp
+  - vb
+  name: GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards()
+  nameWithType: CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards()
+  fullName: Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards()
+  type: Method
+  source:
+    remote:
+      path: Bank/Bank.Domain.Tests/CreditCardTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
+    id: GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+    path: Bank.Domain.Tests/CreditCardTests.cs
+    startLine: 84
+  assemblies:
+  - Bank.Domain.Tests
+  namespace: Bank.Domain.Tests
+  summary: Prueba que valida todos los tipos de tarjetas usando el patrón Factory.
+  example: []
+  syntax:
+    content: >-
+      [Test]
+
+      public void GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards()
+    content.vb: >-
+      <Test>
+
+      Public Sub GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards()
+  overload: Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards*
   attributes:
   - type: NUnit.Framework.TestAttribute
     ctor: NUnit.Framework.TestAttribute.#ctor
@@ -421,6 +510,12 @@ references:
   name: GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard
   nameWithType: CreditCardTests.GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard
   fullName: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeSelected_WhenRequestCreditCard_ThenNewValidCreditCard
+- uid: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard*
+  commentId: Overload:Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  href: Bank.Domain.Tests.CreditCardTests.html#Bank_Domain_Tests_CreditCardTests_GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  name: GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  nameWithType: CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+  fullName: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeMoneyBackChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
 - uid: Bank.Domain.Tests.CreditCardTests.GivenCreditTypePlatinumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard*
   commentId: Overload:Bank.Domain.Tests.CreditCardTests.GivenCreditTypePlatinumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
   href: Bank.Domain.Tests.CreditCardTests.html#Bank_Domain_Tests_CreditCardTests_GivenCreditTypePlatinumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
@@ -433,3 +528,9 @@ references:
   name: GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
   nameWithType: CreditCardTests.GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
   fullName: Bank.Domain.Tests.CreditCardTests.GivenCreditTypeTitaniumChoosen_WhenRequestCreditCard_ThenNewValidCreditCard
+- uid: Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards*
+  commentId: Overload:Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  href: Bank.Domain.Tests.CreditCardTests.html#Bank_Domain_Tests_CreditCardTests_GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  name: GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  nameWithType: CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards
+  fullName: Bank.Domain.Tests.CreditCardTests.GivenAllCreditTypes_WhenRequestCreditCard_ThenNewValidCreditCards

@@ -20,10 +20,15 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: MoneyBackFactoryMethod
     path: Bank.Domain/MoneyBackFactoryMethod.cs
-    startLine: 2
+    startLine: 6
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: >-
+    Implementación concreta del Factory Method para crear tarjetas MoneyBack.
+
+    Especializa el proceso de creación para productos MoneyBack específicos.
+  example: []
   syntax:
     content: 'public class MoneyBackFactoryMethod : CreditCardFactoryMethod'
     content.vb: Public Class MoneyBackFactoryMethod Inherits CreditCardFactoryMethod
@@ -57,15 +62,17 @@ items:
       repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004.git
     id: MakeProduct
     path: Bank.Domain/MoneyBackFactoryMethod.cs
-    startLine: 4
+    startLine: 12
   assemblies:
   - Bank.Domain
   namespace: Bank.Domain
+  summary: Implementa el Factory Method para crear instancias de tarjetas MoneyBack.
   example: []
   syntax:
     content: protected override ICreditCard MakeProduct()
     return:
       type: Bank.Domain.ICreditCard
+      description: Una nueva instancia de MoneyBack.
     content.vb: Protected Overrides Function MakeProduct() As ICreditCard
   overridden: Bank.Domain.CreditCardFactoryMethod.MakeProduct
   overload: Bank.Domain.MoneyBackFactoryMethod.MakeProduct*

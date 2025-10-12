@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CreditCardFactoryMethod | Bank App ">
       
-      
+      <meta name="description" content="Clase abstracta que implementa el patr&#243;n Factory Method para la creaci&#243;n de tarjetas de cr&#233;dito. Define la estructura del algoritmo de creaci&#243;n, delegando la instanciaci&#243;n espec&#237;fica a las subclases.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="Bank_Domain_CreditCardFactoryMethod" data-uid="Bank.Domain.CreditCardFactoryMethod" class="text-break">
-Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L3"><i class="bi bi-code-slash"></i></a>
+Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="Vi
   <dl><dt>Assembly</dt><dd>Bank.Domain.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Clase abstracta que implementa el patrón Factory Method para la creación de tarjetas de crédito.
+Define la estructura del algoritmo de creación, delegando la instanciación específica a las subclases.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -164,10 +166,13 @@ Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="Vi
 
   <h3 id="Bank_Domain_CreditCardFactoryMethod_CreateProduct" data-uid="Bank.Domain.CreditCardFactoryMethod.CreateProduct">
   CreateProduct()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Método público que utiliza el Factory Method para crear y retornar productos.
+La responsabilidad principal del Creator no es crear productos, sino contener lógica de negocio central
+que depende de los objetos Product retornados por el factory method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -178,13 +183,18 @@ Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="Vi
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="Bank.Domain.ICreditCard.html">ICreditCard</a></dt>
-    <dd></dd>
+    <dd><p>Una instancia de ICreditCard creada por el método factory específico de la subclase.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="Bank_Domain_CreditCardFactoryMethod_CreateProduct_examples">Examples</h4>
+  <pre><code class="lang-csharp">CreditCardFactoryMethod factory = new MoneyBackFactoryMethod();
+ICreditCard card = factory.CreateProduct();</code></pre>
 
 
 
@@ -195,10 +205,12 @@ Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="Vi
 
   <h3 id="Bank_Domain_CreditCardFactoryMethod_MakeProduct" data-uid="Bank.Domain.CreditCardFactoryMethod.MakeProduct">
   MakeProduct()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Método abstracto que debe ser implementado por las clases derivadas para crear productos específicos.
+Este es el &quot;Factory Method&quot; que cada subclase debe personalizar según el tipo de tarjeta.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -209,7 +221,8 @@ Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="Vi
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="Bank.Domain.ICreditCard.html">ICreditCard</a></dt>
-    <dd></dd>
+    <dd><p>Una instancia concreta de ICreditCard.</p>
+</dd>
   </dl>
 
 
@@ -226,7 +239,7 @@ Class CreditCardFactoryMethod  <a class="header-action link-secondary" title="Vi
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L3" class="edit-link">Edit this page</a>
+          <a href="https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004/blob/main/Bank/Bank.Domain/CreditCardAbstractMethod.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -4,6 +4,23 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>Bank.Domain</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Ahmed Hasan Akhtar Oviedo</Authors>
+    <Company>UPT-FAING-EPIS</Company>
+    <Product>Bank Application Domain</Product>
+    <Description>Implementación de patrones de diseño creacionales (Factory y Factory Method) para el manejo de tarjetas de crédito en el contexto bancario.</Description>
+    <PackageTags>patterns;factory;factory-method;credit-cards;domain;banking</PackageTags>
+    <RepositoryUrl>https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-01-cs-Aakhtar004</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

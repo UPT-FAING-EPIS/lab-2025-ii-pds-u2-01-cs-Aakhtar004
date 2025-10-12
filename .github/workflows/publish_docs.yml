@@ -1,0 +1,60 @@
+name: Publish Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore Bank/Bank.sln
+      
+    - name: Build
+      run: dotnet build Bank/Bank.sln --no-restore
+      
+    - name: Test with coverage
+      run: dotnet test Bank/Bank.sln --no-build --collect:"XPlat Code Coverage"
+      
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
+      
+    - name: Install dll2mmd
+      run: dotnet tool install -g dll2mmd
+      
+    - name: Install ReportGenerator
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      
+    - name: Generate class diagram
+      run: |
+        cd Bank
+        dll2mmd -f Bank.Domain/bin/Debug/net8.0/Bank.Domain.dll -o disenio.md
+        
+    - name: Generate coverage report
+      run: |
+        cd Bank
+        ReportGenerator "-reports:./*/*/*/coverage.cobertura.xml" "-targetdir:Cobertura" -reporttypes:MarkdownSummaryGithub
+        
+    - name: Generate documentation
+      run: |
+        cd Bank
+        docfx metadata docfx.json
+        docfx build docfx.json
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./Bank/_site
