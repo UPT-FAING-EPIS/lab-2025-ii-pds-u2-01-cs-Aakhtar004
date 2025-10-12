@@ -52,7 +52,7 @@ jobs:
         run: |
           cd Bank
           dotnet pack Bank.Domain/Bank.Domain.csproj -c Release \
-            -p:PackageVersion=2025.0929.${{ github.run_number }} \
+            -p:PackageVersion=2025.0742.${{ github.run_number }} \
             -p:RepositoryUrl=https://github.com/${{ github.repository }} \
             -p:RepositoryType=git
 
