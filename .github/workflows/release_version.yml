@@ -1,4 +1,6 @@
 name: Release Version
+env:
+  DOTNET_VERSION: '8.0'
 
 on:
   push:
@@ -8,67 +10,40 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-        
-    - name: Restore dependencies
-      run: dotnet restore Bank/Bank.sln
-      
-    - name: Build
-      run: dotnet build Bank/Bank.sln --no-restore --configuration Release
-      
-    - name: Test
-      run: dotnet test Bank/Bank.sln --no-build --configuration Release
-      
-    - name: Pack NuGet package
-      run: |
-        cd Bank/Bank.Domain
-        dotnet pack --no-build --configuration Release --output ./release-package /p:PackageVersion=${{ github.ref_name }}
-        
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body: |
-          ## Cambios en esta versión
-          
-          ### Características implementadas:
-          - Patrón Factory implementado
-          - Patrón Factory Method implementado
-          - Pruebas unitarias completas
-          - Documentación generada con DocFX
-          
-          ### Patrones implementados:
-          - **Factory Pattern**: Implementado en `CreditCardFactory`
-          - **Factory Method Pattern**: Implementado en `CreditCardFactoryMethod`
-          
-          ### Productos soportados:
-          - MoneyBack Credit Card
-          - Platinum Credit Card 
-          - Titanium Credit Card
-          
-          ### Cobertura de pruebas:
-          - Todas las clases tienen pruebas unitarias
-          - Cobertura de código generada automáticamente
-        draft: false
-        prerelease: false
-        
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./Bank/Bank.Domain/release-package/Bank.Domain.${{ github.ref_name }}.nupkg
-        asset_name: Bank.Domain.${{ github.ref_name }}.nupkg
-        asset_content_type: application/zip
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Extract version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Build
+        run: |
+          cd Bank
+          dotnet restore
+          dotnet build --configuration Release --no-restore
+
+      - name: Run unit tests
+        run: |
+          cd Bank
+          dotnet test Bank.Domain.Tests/Bank.Domain.Tests.csproj --configuration Release --no-build
+
+      - name: Pack
+        run: |
+          cd Bank
+          dotnet pack Bank.Domain/Bank.Domain.csproj -c Release \
+            --no-build \
+            -p:PackageVersion=${{ steps.get_version.outputs.VERSION }} \
+            -o ./artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "Bank/artifacts/*.nupkg"
+          generate_release_notes: true
